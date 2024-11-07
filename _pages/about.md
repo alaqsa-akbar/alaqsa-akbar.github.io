@@ -13,58 +13,24 @@ redirect_from:
 
 - 🤖 My passion lies in the field of Artificial Intelligence and Machine Learaning
 
-- 🧑‍🔬 I aspire to become a leading researcher in the field
+- ‍🔬 I aspire to become a leading researcher in the field
 
 - 🎉 Feel free to check out the repositories in my account and have fun!
 
 
-## 📚 Education
+## About Me
+I'm Alaqsa Akbar, a dedicated and ambitious junior in computer engineering with a focus on artificial intelligence. Throughout my academic journey, I’ve been deeply involved in AI research, exploring innovative approaches in areas such as adversarial training, AI for climate action, and image segmentation techniques inspired by human perception.
 
-- **King Fahd University of Petroleum and Minerals (KFUPM)**  
-  *Bachelor of Engineering in Computer Engineering*  
-  *GPA: 3.95/4.00*  
-  *2022 – 2026*  
+My most recent work focuses on enhancing the robustness of adversarial patches in rainy conditions, a project I plan to publish soon. I’ve also completed specialized AI training through the KAUST Academy, which included courses from Oxford University on NLP and deep unsupervised learning having been chosen amongst 15 out of 7000+ students from the kingdom, further honing my expertise in the field. I aim to participate in KFUPM's research concentration for my senior year.
 
-- **Georgia Institute of Technology**  
-  *Exchange Student in Computer Engineering*  
-  *GPA: 4.0*  
-  *2024* 
+Beyond research, I am passionate about applying my knowledge to real-world challenges and create a noticable impact on the world. I aim to continue my studies in AI, with aspirations for a Master’s degree and possibly a Ph.D., where I can contribute to impactful, disruptive technologies.
 
-- **Oxford University**  
-  *Summer Program in Advanced Artificial Intelligence*  
-  *Grade: A* \
-  *2024*  
+## Relevant Skills
+- **Computing Languages and Technologies**:  
+  Python, Java, C/C++, Verilog, MATLAB, Lua, Git, Windows, Linux/Unix
 
-## 💼 Work Experience
+- **Machine Learning Libraries and Frameworks**:  
+  PyTorch, TensorFlow, Hugging Face, LangChain, NumPy, Pandas, Matplotlib
 
-- ### Research Assistant, Georgia Tech OLIVES Lab  
-  *Sep 2024 – Present*  
-  - Conducted research under Professor Ghassan AlRegib on AI applications in diagnosing optical diseases.
-  - Managed large datasets and evaluated machine learning models, with data published on HuggingFace.
-
-- ### Researcher, SDAIA-KFUPM Joint Research Center for AI  
-  *Feb 2024 – Aug 2024*  
-  - Worked on adversarial patch attacks with Dr. Abduljabbar Siddiqui.
-  - Developed real-time data pipelines, and augmented images to simulate adverse conditions using OpenCV.
-
-- ### Teaching Assistant, KFUPM  
-  *Jan 2024 – Jul 2024*  
-  - Graded assignments and helped students in Object-Oriented Programming and Introduction to Programming courses.
-
-
-
-## 👨‍💻 Extra-Curricular Activities
-
-- **KAUST Academy**  
-  *Participant in Advanced AI Training*  
-  *Jan 2024 – Aug 2024*  
-  Selected from over 7,000 applicants to participate in a rigorous AI program, including hands-on projects with models like CNNs, LSTMs, GANs, and Diffusion Models.
-
-- **Imaar**  
-  *Volunteer*  
-  Contributed 10+ hours to repair and clean homes for underprivileged families in government-funded housing.
-
-- **Saudi Mathematics Olympiad Team**  
-  *Member* \
-  Represented Saudi Arabia at the Junior Balkan Mathematical Olympiad in Cyprus.
-
+- **Coursework**:
+  Natural Language Processing, Deep Unsupervised Learning, Computer Vision, Reinforcement Learning, Deep Learning, Data Science, Data Structures and Algorithms, Object-Oriented Programming, Embedded Systems, Computer Architecture, Computer Networks
