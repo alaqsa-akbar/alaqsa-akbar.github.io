@@ -9,7 +9,7 @@ redirect_from:
 
 - 👦🏻 My name is Alaqsa Akbar
 
-- 📚 I am currently a Junior Computer Engineering student at King Fahd University of Petrleom and Minerals (KFUPM) at Dhahran, Saudi Arabia
+- 📚 I am currently a Senior Computer Engineering student at King Fahd University of Petrleom and Minerals (KFUPM) at Dhahran, Saudi Arabia
 
 - 🤖 My passion lies in the field of Artificial Intelligence and Machine Learaning
 
@@ -19,11 +19,13 @@ redirect_from:
 
 
 ## About Me
-I'm Alaqsa Akbar, a dedicated and ambitious junior in computer engineering with a focus on artificial intelligence. Throughout my academic journey, I’ve been deeply involved in AI research, exploring innovative approaches in areas such as adversarial training, AI for climate action, and image segmentation techniques inspired by human perception.
+I'm Alaqsa Akbar, a dedicated and ambitious computer engineering student at KFUPM, specializing in artificial intelligence through a research concentration. My journey has taken me across leading institutions and projects—from an exchange term at Georgia Tech to advanced AI coursework at Oxford University, where I was selected among 15 students out of 7000+ applicants.
 
-My most recent work focuses on enhancing the robustness of adversarial patches in rainy conditions, a project I plan to publish soon. I’ve also completed specialized AI training through the KAUST Academy, which included courses from Oxford University on NLP and deep unsupervised learning having been chosen amongst 15 out of 7000+ students from the kingdom, further honing my expertise in the field. I aim to participate in KFUPM's research concentration for my senior year.
+My research interests span adversarial machine learning, AI for climate action, and perception-inspired vision systems. Recently, I’ve worked on RainPGD—a project investigating rain-robust adversarial patch attacks, currently in publication—and contributed to BreachSeek, a multi-agent automated penetration testing framework. At Georgia Tech’s OLIVES Lab, I supported AI research in medical imaging and seismic data, while at the SDAIA-KFUPM Joint Research Center for AI, I developed robust adversarial attack pipelines.
 
-Beyond research, I am passionate about applying my knowledge to real-world challenges and create a noticable impact on the world. I aim to continue my studies in AI, with aspirations for a Master’s degree and possibly a Ph.D., where I can contribute to impactful, disruptive technologies.
+Currently, I’m interning at Baker Hughes, where I develop machine learning models for abnormality detection and contribute to embedded systems automation. Beyond technical work, I was honored to be selected for the prestigious Qimam Fellowship, chosen among 50 students from over 18,000 applicants—a program that cultivates leadership and innovation. I also participate in the BCG Jeel Tamooh Fellowship, further broadening my exposure to industry impact.
+
+Driven by a passion to apply AI for real-world challenges, I plan to continue my studies through a Master’s degree and potentially a Ph.D., with the aim of designing technologies that create meaningful, disruptive impact.
 
 ## Relevant Skills
 - **Computing Languages and Technologies**:  
