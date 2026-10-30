@@ -1,41 +1,53 @@
+# Brick world
 
-# Academic Pages
+A scroll-driven personal site: one persistent LEGO diorama per chapter. Scrolling plays each
+chapter's story, then the island breaks away and the next one falls into place brick by brick.
 
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
+Preview: `python3 -m http.server 8767` in the repo root, then open http://localhost:8767/.
+`cast.html` shows all five characters side by side (`?pose=walk&t=1`, `?view=tq`, `?view=closeup`).
 
-Academic Pages is a Github Pages template for academic websites.
+## Editing text
+All copy lives in `index.html`. Each `<section class="chapter">` is one chapter:
 
+- `data-scene` picks the diorama (`js/scenes/<name>.js`).
+- `data-side` puts the text `left`, `right` or `center` (the diorama moves to the other side).
+- Research, Projects and Away from the desk use one `.step` per item; add a step to add one.
+- Experience: one `<li class="job">` per role. Logos are in `assets/logos/` and are turned white
+  with CSS.
+- Gallery: the pavilion walls are listed at the top of `js/scenes/museum.js` (`WALLS`, `TITLES`).
+  Mosaics are 32×48 grids in `assets/mosaics.json`, made from poster art by
+  `local/brickworld-src/tools/mosaic.mjs` (only the small grids ship, not the posters).
+  Photos: full image in `assets/photos/`, a ~560px copy in `assets/photos/thumbs/`. The wall shows
+  them as mosaics too (add the photo to `mosaic.mjs` and rerun it, then to `WALLS` in `museum.js`);
+  `.prints` in `index.html` links the originals, which open full size.
+- Countries: edit `data-visited` on the `.worldmap` canvas (ISO alpha-3 codes, home first) and add a
+  matching `<button data-country>` to `.regions`. The tile grid is `assets/worldmap.json`
+  (Natural Earth, 120×52), built by `local/brickworld-src/tools/worldmap.mjs`.
 
-# Getting Started
+## Editing scenes
+Each file in `js/scenes/` builds one diorama with the brick kit (`js/bricks.js`). Positions are in
+studs, heights in plates (a brick is 3 plates).
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
-1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
+- `k.brick / plate / tile / slope / round / cone / bar` add single pieces.
+- `k.fill` and `k.layer` brick a whole area with real brick sizes and staggered joints.
+- `k.prop(object, { order })` adds anything else (characters, printed tiles); `order` 0–1 is when it lands.
+- `cams` are camera keys over the chapter (t = 0 → 1); `light` sets the mood.
+- Characters move with `Actor` keys (`js/actor.js`): `{ t, at: [x, z], face, pose, via, slide }`.
+  Walking between two positions plays a walk cycle locked to distance, so feet don't skate.
 
-See more info at https://academicpages.github.io/
+## Look
+`js/stage.js` adds soft shadows, ambient occlusion, bloom, a tilt-shift band and depth haze on
+desktop. `?lite` turns post-processing off; phones and reduced-motion get the plain render.
+`kit.overlaps()` in the console lists bricks that share volume (those z-fight and flicker).
 
-## Running Locally
+## Characters
+- LEGO figures (`js/minifig.js`) share one articulated base in `assets/minifig.glb`
+  (built in Blender from `local/brickworld-src/minifig-parts.blend`). Prints for Luffy and the classic
+  figure are drawn in `js/prints.js`.
+- Steve and Gordon (`js/blocky.js`) are built straight from 64×64 skins in `assets/skins/`.
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
-
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
-
-
-# Maintenance 
-
-Bug reports and feature requests to the template  should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
-
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
-
-## Bugfixes and enhancements
-
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
-
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
+## Credits
+- Minifigure parts: "LEGO Minifigure (Animated)" by BentheCreator, CC BY 4.0 (Sketchfab).
+- Batman cowl, cape and prints: "Lego Batman Minifigure" by Neut2000, CC BY 4.0 (Sketchfab).
+- Gordon Freeman skin: SkinsMC #257261. Steve: the default Minecraft skin.
+- Luffy's hair, hat and prints, all scenes and animation: original to this site.

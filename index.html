@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alaqsa Akbar</title>
+<meta name="description" content="Alaqsa Akbar, AI engineer at HUMAIN working on multi-agent systems, sign language generation and world models.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#08080A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+<script type="module" src="js/main.js"></script>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<header class="top">
+  <a class="mark" href="#home">Alaqsa Akbar</a>
+  <nav aria-label="Sections">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<ol class="stack" aria-label="Chapters"></ol>
+
+<main>
+  <!-- Each chapter drives one diorama (data-scene). data-side puts the text left or right. -->
+  <section id="home" class="chapter" data-scene="desk" data-side="left" data-title="Desk">
+    <div class="copy">
+      <h1>Alaqsa<br>Akbar</h1>
+      <p class="lede">AI engineer at HUMAIN, building multi-agent systems that automate enterprise workflows.</p>
+      <p>My research is on generative models for Saudi Sign Language. Next, I want to do a PhD on world models trained with reinforcement learning.</p>
+      <p class="links">
+        <a href="https://github.com/alaqsa-akbar">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=Nry9I4cAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/alaqsa-akbar">LinkedIn</a>
+        <a href="files/Resume.pdf">CV</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="about" class="chapter" data-scene="ridge" data-side="right" data-title="About">
+    <div class="copy">
+      <figure class="portrait"><img src="assets/profile.jpg" alt="Alaqsa Akbar on a mountain trail above a valley" width="600" height="800"></figure>
+      <h2>About</h2>
+      <p>I'm an AI engineer at HUMAIN, where I work on HUMAIN Crew, a multi-agent system that automates enterprise agentic workflows.</p>
+      <p>I studied computer engineering at KFUPM with a research concentration in AI, spent an exchange term at Georgia Tech, and took advanced AI coursework at Oxford as one of 15 students selected from more than 7,000 applicants.</p>
+      <p>Before any of that I was on Saudi Arabia's mathematics olympiad team, and I still reach for a proof when a model misbehaves.</p>
+    </div>
+  </section>
+
+  <section id="experience" class="chapter chapter--steps" data-scene="network" data-side="right" data-title="Experience">
+    <!-- One .job per role. Logos live in assets/logos; white versions are made with a CSS filter. -->
+    <div class="step step--flow">
+      <div class="copy">
+        <h2>Experience</h2>
+        <ol class="jobs">
+          <li class="job">
+            <div class="logos"><img src="assets/logos/humain.svg" alt="HUMAIN" width="3016" height="418"></div>
+            <h3>AI Engineer</h3>
+            <p class="when">HUMAIN, Riyadh. 2026 to now</p>
+            <p>HUMAIN Crew: teams of agents that plan, call tools and hand work to each other to run enterprise workflows end to end.</p>
+            <ul class="areas"><li>Multi-agent systems</li><li>Agentic workflows</li><li>LLMs</li></ul>
+          </li>
+          <li class="job">
+            <div class="logos"><img src="assets/logos/sdaia.svg" alt="SDAIA" width="225" height="78"><img src="assets/logos/kfupm.svg" alt="KFUPM" width="300" height="49"></div>
+            <h3>Researcher</h3>
+            <p class="when">SDAIA–KFUPM Joint Research Center for AI. 2024, and 2025 to 2026</p>
+            <p>Sign language video generation with Dr. Motaz Alfarraj: diffusion transformers conditioned on retrieved VQ-VAE pose tokens, trained on SLURM clusters.</p>
+            <p>Before that, with Dr. Abduljabbar Siddiqui: adversarial patches that still work in the rain, with a data pipeline that generates training data on the fly.</p>
+            <ul class="areas"><li>Video diffusion</li><li>Sign language</li><li>Adversarial robustness</li></ul>
+          </li>
+          <li class="job">
+            <div class="logos"><img src="assets/logos/baker-hughes.svg" alt="Baker Hughes" width="293" height="49"></div>
+            <h3>ML Research Intern</h3>
+            <p class="when">Baker Hughes, Houston. Summer 2025</p>
+            <p>Recovered low-frequency signals from distributed acoustic sensing with compressed sensing, and built abnormality detection models for embedded systems. Advised by Dr. Peyman Moradi.</p>
+            <ul class="areas"><li>Compressed sensing</li><li>Signal processing</li><li>Anomaly detection</li></ul>
+          </li>
+          <li class="job">
+            <div class="logos"><img src="assets/logos/georgia-tech.svg" alt="Georgia Tech" width="720" height="162"></div>
+            <h3>Research Assistant</h3>
+            <p class="when">OLIVES Lab, Georgia Tech. Fall 2024</p>
+            <p>Cleaned, documented and published terabyte-scale seismic and ophthalmology datasets on Hugging Face, with Prof. Ghassan AlRegib's lab.</p>
+            <ul class="areas"><li>Medical imaging</li><li>Seismic data</li><li>Datasets</li></ul>
+          </li>
+        </ol>
+        <dl class="honours">
+          <dt>Qimam Fellowship</dt><dd>One of 50 chosen from more than 18,000 applicants, 2025</dd>
+          <dt>KAUST Academy at Oxford</dt><dd>One of 15 chosen from more than 7,000 applicants, 2024</dd>
+          <dt>BCG Jeel Tamooh</dt><dd>Fellow</dd>
+          <dt>Saudi Mathematics Olympiad Team</dt><dd>Junior Balkan MO in Cyprus, where the team placed third</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="research" class="chapter chapter--steps" data-scene="rooftop" data-side="left" data-title="Research">
+    <div class="step">
+      <div class="copy">
+        <h2>Research</h2>
+        <article class="work">
+          <h3>SSL-DiT: Saudi Sign Language video generation using multi-condition diffusion transformers</h3>
+          <p>My undergraduate thesis. A diffusion transformer generates Saudi Sign Language video from several conditioning signals at once.</p>
+          <p>It grew out of my proposal, SSLVG, a text-to-gloss-to-video pipeline: each sign's pose is retrieved as a VQ-VAE latent, a transformer models the transitions between signs, and the result conditions a DiT. Evaluated on Isharah-1000 and KArSL.</p>
+          <p class="meta">KFUPM, 2026. Advised by Dr. Motaz Alfarraj. Paper in preparation.</p>
+        </article>
+      </div>
+    </div>
+    <div class="step">
+      <div class="copy">
+        <article class="work">
+          <h3>BreachSeek: a multi-agent automated penetration tester</h3>
+          <p>Language-model agents that plan a penetration test, carry out the attack, and report the vulnerabilities they find.</p>
+          <p class="meta">Alshehri, Alshehri, Almalki, Bamardouf and <b>Akbar</b>. arXiv, 2024.</p>
+          <p class="links">
+            <a href="https://arxiv.org/abs/2409.03789">Paper</a>
+            <a href="https://github.com/snow10100/pena/">Code</a>
+            <a href="images/breachseek.png">Poster</a>
+          </p>
+        </article>
+      </div>
+    </div>
+    <div class="step">
+      <div class="copy">
+        <article class="work">
+          <h3>Next: world models</h3>
+          <p>I want to do a PhD on world models: learning predictive representations of the world in the spirit of JEPA, and training them with reinforcement learning.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="chapter chapter--steps" data-scene="lab" data-side="left" data-title="Projects">
+    <div class="step">
+      <div class="copy">
+        <h2>Projects</h2>
+        <article class="work">
+          <h3>Saudi Sign Language Recognition</h3>
+          <p>Continuous sign language recognition for Saudi Sign Language on the Isharah-500 dataset, with Dr. Hamzah Luqman.</p>
+          <p class="figure"><span class="num">6.74%</span> word error rate on the development set</p>
+          <p class="meta">2025–2026</p>
+          <p class="links"><a href="files/SSLR.pdf">Paper</a><a href="https://github.com/alaqsa-akbar/SSLR">Code</a><a href="https://snalyami.github.io/Isharah_CSLR/">Dataset</a></p>
+        </article>
+      </div>
+    </div>
+    <div class="step">
+      <div class="copy">
+        <article class="work">
+          <h3>RainPGD</h3>
+          <p>Do adversarial patches still fool object detectors in the rain? RainPGD makes PGD patches hold up under rain, and RainyCOCO adds detection data across rain conditions. With Dr. Abduljabbar Siddiqui.</p>
+          <p class="meta">2024</p>
+          <p class="links"><a href="files/RainPGD.pdf">Paper</a><a href="https://github.com/alaqsa-akbar/RainPGD">Code</a><a href="https://huggingface.co/datasets/alaqsa-akbar/RainyCOCO">Dataset</a></p>
+        </article>
+      </div>
+    </div>
+    <div class="step">
+      <div class="copy">
+        <article class="work">
+          <h3>Transformer</h3>
+          <p>The architecture from <cite>Attention Is All You Need</cite>, implemented from scratch.</p>
+          <p class="meta">2024</p>
+          <p class="links"><a href="https://github.com/alaqsa-akbar/Transformer/tree/main">Code</a><a href="https://github.com/alaqsa-akbar?tab=repositories">All repositories</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="chapter chapter--steps" data-scene="museum" data-side="right" data-title="Gallery">
+    <!-- The pavilion turns one wall per step. Mosaics come from assets/mosaics.json, photos from assets/photos. -->
+    <div class="step">
+      <div class="copy">
+        <h2>The gallery</h2>
+        <p>Games, shows and films I keep going back to, and five photographs of my own, all rebuilt as brick mosaics.</p>
+        <h3>Games</h3>
+        <p class="titles">Minecraft, Counter-Strike, Half-Life 1, 2 and Alyx, Portal, Terraria, Cyberpunk 2077</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="copy">
+        <h3>Anime</h3>
+        <p class="titles">One Piece, Attack on Titan, Spy×Family, Hunter×Hunter, Naruto</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="copy">
+        <h3>Films</h3>
+        <p class="titles">The Dark Knight, Interstellar, The Martian, The Odyssey, Avengers: Endgame</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="copy">
+        <h3>Photographs</h3>
+        <p>Mine, rebuilt in bricks like the rest. Tap one to see the original.</p>
+        <ul class="prints">
+          <li><a class="photo" href="assets/photos/istanbul-1.jpg"><img src="assets/photos/thumbs/istanbul-1.jpg" alt="Istanbul's skyline of domes and minarets" loading="lazy" width="560" height="315"></a></li>
+          <li><a class="photo" href="assets/photos/petra.jpg"><img src="assets/photos/thumbs/petra.jpg" alt="The Treasury at Petra through the Siq" loading="lazy" width="315" height="560"></a></li>
+          <li><a class="photo" href="assets/photos/silhouette.jpg"><img src="assets/photos/thumbs/silhouette.jpg" alt="A silhouette on a rock against bright clouds" loading="lazy" width="315" height="560"></a></li>
+          <li><a class="photo" href="assets/photos/petra-camel.jpg"><img src="assets/photos/thumbs/petra-camel.jpg" alt="A camel in a red saddle at Petra" loading="lazy" width="560" height="315"></a></li>
+          <li><a class="photo" href="assets/photos/lantern.jpg"><img src="assets/photos/thumbs/lantern.jpg" alt="A brass lantern" loading="lazy" width="399" height="560"></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="elsewhere" class="chapter chapter--steps" data-scene="harbor" data-side="left" data-title="Elsewhere">
+    <div class="step">
+      <div class="copy">
+        <h2>Where I've been</h2>
+        <!-- Visited countries: ISO 3166 alpha-3 codes, home first. Each needs a matching button below. -->
+        <div class="map">
+          <canvas class="worldmap" data-home="SAU" data-visited="SAU,BHR,ARE,JOR,LBN,SYR,EGY,CYP,TUR,FRA,GBR,MYS,USA" role="img" aria-label="World map built from round tiles, with the countries I've visited in red"></canvas>
+          <p class="map-label" hidden></p>
+        </div>
+        <div class="regions">
+          <p><span>Middle East</span> <button type="button" data-country="SAU">Saudi Arabia</button> <button type="button" data-country="BHR">Bahrain</button> <button type="button" data-country="ARE">UAE</button> <button type="button" data-country="JOR">Jordan</button> <button type="button" data-country="LBN">Lebanon</button> <button type="button" data-country="SYR">Syria</button> <button type="button" data-country="EGY">Egypt</button></p>
+          <p><span>Europe</span> <button type="button" data-country="CYP">Cyprus</button> <button type="button" data-country="TUR">Turkey</button> <button type="button" data-country="FRA">France</button> <button type="button" data-country="GBR">United Kingdom</button></p>
+          <p><span>Asia</span> <button type="button" data-country="MYS">Malaysia</button> <span>Americas</span> <button type="button" data-country="USA">United States</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="copy">
+        <h3>Off screen</h3>
+        <p>Bouldering, climbing and hiking, usually with a camera somewhere in the bag.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="chapter" data-scene="campfire" data-side="center" data-title="Contact">
+    <div class="copy">
+      <h2>Say hello</h2>
+      <p><a class="email" href="mailto:alaqsaakbar@hotmail.com">alaqsaakbar@hotmail.com</a></p>
+      <p class="links">
+        <a href="https://github.com/alaqsa-akbar">GitHub</a>
+        <a href="https://www.linkedin.com/in/alaqsa-akbar">LinkedIn</a>
+        <a href="https://x.com/alaqsaakbar">X</a>
+        <a href="https://orcid.org/0009-0008-6718-594X">ORCID</a>
+      </p>
+      <p class="credits">Built from bricks with three.js. Minifigure parts by BentheCreator and Lego Batman by Neut2000 (CC BY 4.0, Sketchfab), with hair and face prints from the LDraw parts library (CC BY 4.0). Minecraft skins from SkinsMC. Gallery mosaics are fan-made from each title's key art, which belongs to its owners.</p>
+    </div>
+  </section>
+</main>
+<dialog class="lightbox" aria-label="Photo"><img alt=""><button type="button" aria-label="Close">Close</button></dialog>
+<p class="loading" role="status">Sorting bricks…</p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Cast</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>html,body{margin:0;height:100%;background:#0b0b0d}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+</head><body>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { loadParts, Minifig, walkPose } from './js/minifig.js';
+import { Blocky, crowbar, blockyWalk } from './js/blocky.js';
+const q = new URLSearchParams(location.search);
+const r = new THREE.WebGLRenderer({ antialias: true });
+r.setSize(innerWidth, innerHeight); r.setPixelRatio(Math.min(devicePixelRatio, 2));
+r.toneMapping = THREE.NeutralToneMapping; r.shadowMap.enabled = true; r.shadowMap.type = THREE.PCFShadowMap;
+document.body.append(r.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color('#1a1a1e');
+scene.environment = new THREE.PMREMGenerator(r).fromScene(new RoomEnvironment(), 0.04).texture;
+scene.environmentIntensity = 0.5;
+const cam = new THREE.PerspectiveCamera(22, innerWidth / innerHeight, 1, 200);
+const view = q.get('view') || 'front';
+const cp = { closeup: [0, 4.8, 14], closeside: [10, 4.8, 9], midside: [18, 3, 0], midback: [12, 4, -13], front: [0, 6, 46], back: [0, 6, -46], side: [46, 6, 0], tq: [28, 14, 36] }[view];
+cam.position.set(...cp); cam.lookAt(0, view.startsWith('close') ? 4.3 : view.startsWith('mid') ? 2.6 : 2.8, 0);
+const key = new THREE.DirectionalLight('#fff3e2', 2.4); key.position.set(10, 18, 14); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); Object.assign(key.shadow.camera, { left: -15, right: 15, top: 15, bottom: -15 }); scene.add(key);
+scene.add(new THREE.HemisphereLight('#c8d4ff', '#302020', 0.6));
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 40), new THREE.MeshStandardMaterial({ color: '#3a3a40' }));
+ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+const parts = await loadParts();
+const cast = [new Minifig(parts, q.get('me') !== null ? 'me' : 'classic'), new Minifig(parts, 'batman'), new Minifig(parts, 'luffy'), new Blocky('assets/skins/steve.png'), new Blocky('assets/skins/gordon.png')];
+const bar = crowbar(); cast[4].hold(bar, bar.userData.grip);
+const only = q.get('only');
+cast.forEach((c, i) => { if (only !== null && +only !== i) return; c.root.position.x = only !== null ? 0 : (i - 2) * 4.2; scene.add(c.root); });
+const t = +(q.get('t') || 0);
+const pose = q.get('pose');
+cast.forEach((c, i) => {
+  if (pose === 'walk') c.setPose(c instanceof Blocky ? blockyWalk(t + i) : walkPose(t + i));
+  else if (pose === 'sit') c.setPose({ legL: Math.PI / 2, legR: Math.PI / 2, sit: 1, seat: 0, armL: 0.6, armR: 0.6 });
+  else if (pose === 'json') c.setPose(JSON.parse(q.get('p')));
+  else c.setPose({});
+});
+if (q.get('cape')) cast[1].extras.cape.rotation.x = +q.get('cape');
+r.setAnimationLoop(() => r.render(scene, cam));
+window.__ready = true;
+</script></body></html>

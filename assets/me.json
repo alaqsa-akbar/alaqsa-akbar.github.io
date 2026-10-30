@@ -1,0 +1,36 @@
+{
+  "skin": "#F6D7B3",
+  "hair": {
+    "style": "wavy",
+    "color": "#352100"
+  },
+  "hat": {
+    "style": "none",
+    "color": "#1B1D21"
+  },
+  "face": {
+    "print": "lopsided",
+    "brows": "raised",
+    "eyes": "bright",
+    "mouth": "smirk",
+    "beard": "none",
+    "glasses": "none",
+    "glassesColor": "#1B1D21"
+  },
+  "top": {
+    "style": "zip",
+    "color": "#1B2A4A",
+    "trim": "#A95500",
+    "print": "none"
+  },
+  "legs": {
+    "color": "#352100",
+    "shoes": "#5F625D",
+    "belt": "none"
+  },
+  "backpack": {
+    "on": true,
+    "color": "#1B1D21"
+  },
+  "hold": "none"
+}

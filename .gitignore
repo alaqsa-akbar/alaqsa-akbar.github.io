@@ -1,12 +1,6 @@
-# Ignore the contents of the _site directory
-_site/
-
-# Ignore the directory for local files during development
+# Work in progress, tools and source art (not published)
 local/
+design/
+.playwright-mcp/
 
-# Ignore the Gemfile that is generated
-Gemfile.lock
-
-# Ingore files created by npm
 node_modules
-package-lock.json

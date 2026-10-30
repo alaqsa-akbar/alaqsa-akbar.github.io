@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minifig Builder</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+<style>
+:root { --night: #08080A; --red: #C91A09; --white: #F2F3F2; --lbg: #A0A5A9; --panel: #141519; --line: #26282E;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif; color: var(--white); background: var(--night); }
+* { box-sizing: border-box; }
+body { margin: 0; height: 100dvh; display: grid; grid-template-columns: 1fr 22rem; background: var(--night); }
+.view { position: relative; min-height: 0; background: radial-gradient(ellipse at 50% 40%, #1d1f26, var(--night) 70%); }
+.view canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+.view canvas:active { cursor: grabbing; }
+.poses { position: absolute; left: 1rem; bottom: 1rem; display: flex; gap: .4rem; }
+.panel { background: var(--panel); border-left: 1px solid var(--line); overflow-y: auto; padding: 1.5rem 1.25rem 2rem; }
+h1 { font-size: 1.5rem; font-weight: 650; font-stretch: 88%; margin: 0 0 .3rem; letter-spacing: -0.01em; }
+.lede { margin: 0 0 1.25rem; color: var(--lbg); font-size: .92rem; line-height: 1.5; }
+fieldset { border: 0; border-top: 1px solid var(--line); margin: 0; padding: 1rem 0 .5rem; }
+legend { font-weight: 650; font-size: 1rem; padding: 0 .4rem 0 0; }
+.row { margin: .55rem 0 .8rem; }
+.row > span { display: block; font-size: .85rem; color: var(--lbg); margin-bottom: .35rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .3rem; }
+button { font: inherit; font-size: .88rem; color: var(--white); background: #22242A; border: 1px solid #33363D; border-radius: 4px; padding: .3rem .65rem; cursor: pointer; }
+button:hover { border-color: #555962; }
+button[aria-pressed="true"] { background: var(--red); border-color: var(--red); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+.swatches { display: flex; flex-wrap: wrap; gap: .3rem; align-items: center; }
+.swatches button { width: 1.6rem; height: 1.6rem; padding: 0; border-radius: 50%; border: 2px solid transparent; box-shadow: inset 0 -3px 0 rgb(0 0 0 / .25); }
+.swatches button[aria-pressed="true"] { border-color: var(--white); background-clip: padding-box; }
+.swatches input { width: 1.9rem; height: 1.7rem; padding: 0; border: 0; background: none; cursor: pointer; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; margin-top: 1rem; }
+.actions .primary { grid-column: 1 / -1; background: var(--red); border-color: var(--red); font-weight: 600; padding: .55rem; }
+.status { min-height: 1.4em; font-size: .85rem; color: var(--lbg); margin: .6rem 0 0; }
+.howto { font-size: .85rem; color: var(--lbg); line-height: 1.5; margin: 1.25rem 0 0; }
+code { font-size: .82rem; color: var(--white); }
+@media (max-width: 760px) {
+  body { grid-template-columns: 1fr; grid-template-rows: 48dvh 1fr; }
+  .panel { border-left: 0; border-top: 1px solid var(--line); padding: 1.25rem 1rem 2rem; }
+}
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
+<script type="module" src="js/builder.js"></script>
+</head>
+<body>
+<div class="view">
+  <canvas id="view" aria-label="Your minifigure. Drag to turn it."></canvas>
+  <div class="poses" role="group" aria-label="Pose">
+    <button data-pose="stand" aria-pressed="true">Stand</button>
+    <button data-pose="wave" aria-pressed="false">Wave</button>
+    <button data-pose="walk" aria-pressed="false">Walk</button>
+  </div>
+</div>
+<main class="panel">
+  <h1>Build your minifig</h1>
+  <p class="lede">Every change shows up on the left. Drag the figure to turn it round.</p>
+  <form id="form"></form>
+  <div class="actions">
+    <button class="primary" id="save">Download me.json</button>
+    <button id="copy">Copy settings</button>
+    <button id="reset">Start over</button>
+  </div>
+  <p class="status" id="status" role="status"></p>
+  <p class="howto">To use it on the site, put <code>me.json</code> in <code>local/brickworld/assets/</code>, or paste the copied settings into a message to Claude.</p>
+</main>
+</body>
+</html>
